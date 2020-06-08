@@ -15,7 +15,6 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        // width: calc(100vw - 140px);
         max-width: 1200px;
         margin: auto;
         align-items: center;
@@ -33,17 +32,39 @@
 
     &__brand-link {
         text-decoration: none;
-        color: #222;
+        color: $color-grey-dark-1;
     }
 
     &__elements {
+        
+    }
 
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        } 
     }
 
     &__link {
 
-        &::after {
-            
+        &:link,
+        &:visited {
+            color: $color-grey-dark-1;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-primary;
+            transform: rotate(5deg) scale(1.3);
         }
     }
 }

@@ -1,11 +1,18 @@
-let htmlCode = `
+import '../scss/main.scss';
 
-        <main>
-            <header></header>
-        </main>
+const el = document.querySelector(".el--js")
+const textarea__input = document.querySelector(".textarea__input--js")
+textarea__input.value = `<main>
+    <header class="header">header</header>
+</main>`
+const textarea__output = document.querySelector(".textarea__output--js")
 
-    
-`;
+const button = document.querySelector(".button__convert--js")
+button.addEventListener("click", (e)=>{
+    e.preventDefault();
+    console.log(textarea__input.value)
+
+    let htmlCode = textarea__input.value;
 
 const tagsHTML = ["script","main","header","pre","div","p"];
 const brackets = [
@@ -79,16 +86,19 @@ console.log("----------")
 // Odkodowanie znaczników otwierających html: main, header itp
 for (const tag of tagsHTML) {
     const reg = new RegExp(`XXXXXX${tag}` , "gi");
-    htmlCode = htmlCode.replace(reg, `<span class="tag">${tag}</span>`);
+    htmlCode = htmlCode.replace(reg, `<span class="code-html__tag">${tag}</span>`);
 }
 console.log(htmlCode)
 
 // Odkodowanie znaczników zamykających html: main, header itp
 for (const tag of tagsHTML) {
     const reg = new RegExp(`YYYYYY${tag}` , "gi");
-    htmlCode = htmlCode.replace(reg, `<span class="tag">${tag}</span>`);
+    htmlCode = htmlCode.replace(reg, `<span class="code-html__tag">${tag}</span>`);
 }
 console.log(htmlCode)
 
-const el = document.querySelector(".el--js")
+
 el.innerHTML = `<pre>${htmlCode}</pre>`;
+textarea__output.value = `<pre>${htmlCode}</pre>`;
+})
+

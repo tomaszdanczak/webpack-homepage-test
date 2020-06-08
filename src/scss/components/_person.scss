@@ -1,0 +1,39 @@
+.person {
+    // background-color: #ccc;
+    border: 2px solid black;
+    grid-column: 3/ span 1;
+    grid-row: 2/ span 1;
+    padding: 20px;
+    margin-left: 30px;
+
+    &__picture-box {
+        margin-bottom: 16px;
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: 500px;
+    }
+
+    &__description {
+        color:  #222;
+        text-align: center;
+        font-size: 16px;
+        font-family: Helvetica;
+        margin-bottom: 26px;
+        display: block;
+        line-height: 1.5;
+    }
+    
+    &__paragraph {
+        padding-bottom: 1rem;
+    }
+
+    &__name {
+        color: $color-blue;
+    }
+
+    &__strong {
+        font-weight: 700;
+    }
+}

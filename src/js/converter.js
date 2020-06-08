@@ -14,14 +14,14 @@ button.addEventListener("click", (e)=>{
 
     let htmlCode = textarea__input.value;
 
-const tagsHTML = ["script","main","header","pre","div","p"];
+const tagsHTML = ["script","section","main","header","pre","div","p","h1","html"];
 const brackets = [
     {chars: "</", changeText: "AAAAAA", span: "<span>&lt&#47;</span>"},
     {chars: "/>", changeText: "BBBBBB", span: "<span>&#47&gt;</span>"},
     {chars: "<", changeText: "CCCCCC", span: "<span>&lt;</span>"},
     {chars: ">", changeText: "DDDDDD", span: "<span>&gt;</span>"}, //generuje błąd <hea>D, zamienić innym zakodowaniem
 ];
-const htmlAttributies = ["id","class"];
+const htmlAttributies = ["id","class","lang"];
 //-----------------
 
 //                 1     
@@ -71,7 +71,7 @@ console.log(htmlCode)
 // Odkodowanie atrybutów HTML: class, id itp
 for (const attr of htmlAttributies){
     const reg = new RegExp(`SSSS(${attr})SSSS` , "gi");
-    htmlCode = htmlCode.replace(reg, `<span class="attr">$1</span>`)
+    htmlCode = htmlCode.replace(reg, `<span class="code-html__attr">$1</span>`)
 }
 console.log(htmlCode)
 
@@ -98,7 +98,7 @@ for (const tag of tagsHTML) {
 console.log(htmlCode)
 
 
-el.innerHTML = `<pre>${htmlCode}</pre>`;
+el.innerHTML = `<pre class="code-html">${htmlCode}</pre>`;
 textarea__output.value = `<pre>${htmlCode}</pre>`;
 })
 

@@ -3,5 +3,45 @@
     &__header {
         font-size: 2rem;
         margin: 24px 0 16px;
+        font-weight: 600;
+    }
+
+    &__list {
+        padding-left: 3.2rem;
+    }
+
+    &__list-item {
+        line-height: 2.4rem;
+    }
+
+    &__highlight {
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        padding: 3px 6px;
+        font-size: 1.4rem;
+    }
+
+    &__important {
+        background-color: #f8d7da;
+        padding: 2px 5px;
+    }
+
+    &__link {
+        color: #0366d6;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__subheader {
+        font-size: 1.6rem;
+        margin: 2.4rem 0 1.6rem;
+    }
+
+    &__paragraph {
+        font-size: 1.6rem;
+        margin-bottom: 1.6rem;
     }
 }

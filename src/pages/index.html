@@ -7,6 +7,7 @@
     
   </head>
   <body>
+    <p class="notification">Strona w budowie</p>
     <header class="header">
       <nav class="nav nav--js">
           <div class="nav__container">
@@ -79,7 +80,7 @@
         </div>
         <div class="person__description">
             <p class="person__paragraph">Nazywam się <span class="person__name">Tomasz Dańczak</span>, z zawodu jestem <span class="person__strong">technologiem przetwórstwa tworzyw sztucznych</span>. </p>
-            <p class="person__paragraph">Najogólniej mówiąc do zakresu moich obowiązków należy ustawianie, optymalizowanie i uruchamianie nowych produkcji detali z tworzyw sztucznych przy wykorzyswaniu wtryskarek oraz robotów przemysłowych i różnego typu peryferiów.</p>
+            <p class="person__paragraph">Najogólniej mówiąc do zakresu moich obowiązków należy ustawianie, optymalizowanie i uruchamianie produkcji nowych detali z tworzyw sztucznych przy wykorzyswaniu wtryskarek oraz robotów przemysłowych i różnego typu peryferiów.</p>
         </div>
       </article>
     </section>
@@ -87,9 +88,61 @@
       <h2 class="notes__header">Notatki WTF</h2>
       <article class="notes__article">
         <h3 class="notes__article-header">Tydzień II</h3>
+
         <section class="note">
           <h4 class="note__header">Tagi HTML5</h4>
+          <pre class="code-html">
+<span class="code-html__angle-bracket">&lt;</span><span class="code-html__tag">html</span> <span class="code-html__attr">lang</span>="<span class="code-html__value">pl</span>"<span class="code-html__angle-bracket">&gt;</span>  <span class="code-html__comment">&lt;!-- pamiętać, żeby na polskich stronach wpisywać pl --&gt;</span>
+<span class="code-html__angle-bracket">&lt;</span><span class="code-html__tag">main</span><span class="code-html__angle-bracket">&gt;</span>   <span class="code-html__comment">&lt;!-- w tagu main powinna znajdować się główna treść strony --&gt;</span>
+<span class="code-html__angle-bracket">&lt;</span><span class="code-html__tag">section</span><span class="code-html__angle-bracket">&gt;</span>  <span class="code-html__comment">&lt;!-- każda sekcja powinna posiadać nagłówek --&gt;</span>
+<span class="code-html__angle-bracket">&lt;</span><span class="code-html__tag">h1</span><span class="code-html__angle-bracket">&gt;</span>  <span class="code-html__comment">&lt;!-- nagłówek h1 musi być na stronie (musi być unikalny i w main) --&gt;</span>
+          </pre>
         </section>
+
+        <section class="note">
+          <h4 class="note__header">Visual Studio Code</h4>
+          <ul class="note__list">
+            <li class="note__list-item"><code class="note__highlight">View -> Toogle Word Wrap</code>  - załączenie zawijania wierszy</li>
+            <li class="note__list-item"><code class="note__highlight">Ctrl + Shift + P</code>  - wpisujemy Format Document</li>
+          </ul>
+        </section>
+
+        <section class="note">
+          <h4 class="note__header">Dokumentacje HTML i CSS</h4>
+          <ul class="note__list">
+            <li class="note__list-item"><a href="https://www.w3.org/TR/html52/" class="note__link">Link</a> do dokumentacji HTML5</li>
+            <li class="note__list-item"><a href="https://www.w3.org/TR/CSS/" class="note__link">Link</a> do dokumentacji CSS</li>
+          </ul>
+        </section>
+
+        <section class="note">
+          <h4 class="note__header">Inne</h4>
+          <ul class="note__list">
+            <li class="note__list-item"><span class="note__important">WAŻNE</span> - mówimy arkuszy styl<span class="note__highlight">ów</span> nie sty<span class="note__highlight"></span>li</li>
+            <li class="note__list-item">W celu odświeżenia strony używamy kombinacji klawiszy <span class="note__highlight">Ctrl + R</span>, ale możemy także użyć klawisza <span class="note__highlight">F5</span></li>
+          </ul>
+        </section>
+
+        <h3 class="notes__article-header">Tydzień III</h3>
+        <section class="note">
+          <h4 class="note__header">Trello</h4>
+          <h5 class="note__subheader">Czym jest trello?</h5>
+          <p class="note__paragraph">Trello jest prostym narzędziem do organizacji pracy opartym na zasadach Kanban. Trello ułatwia śledzenie postępu prac/nauki. Jest dostępny pod <a href="https://trello.com/" class="note__link">linkiem</a>.</p>
+          <h5 class="note__subheader">Praca z Trello</h5>
+          <ul class="note__list">
+            <li class="note__list-item">jest zalecane trzymanie jednego zadania w doing</li>
+            <li class="note__list-item">należy dobrze opisywać "definition of done" (DOD)</li>
+            <li class="note__list-item">zalecane jest używanie trzech zakładek</li>
+          </ul> 
+        </section>
+
+        <section class="note">
+          <h4 class="note__header">Tagi HTML5</h4>
+          <p class="note__paragraph">Poza tagiem <code class="note__highlight">main</code> powinno znajdować się wszystko co się powtarza na stronie np. tagi <code class="note__highlight">header</code> i <code class="note__highlight">footer</code>. Roboty czytają tylko to co jest w tagu <code class="note__highlight">main</code>.</p>
+          <p class="note__paragraph">Tag <span class="note__highlight">article</span> może zawierać tagi <span class="note__highlight">header</span> oraz <span class="note__highlight">footer</span>.</p>
+          <p class="note__paragraph">Tagi <span class="note__highlight">img</span> i <span class="note__highlight">br</span> można zamykać <code class="note__highlight">></code> lub <code class="note__highlight">/></code>. Obie wersje są poprawne.</p>
+        </section>
+
       </article>
     </section>
   </main>

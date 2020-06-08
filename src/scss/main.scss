@@ -9,6 +9,7 @@
 @import "base/typography";
 
 @import "components/card";
+@import "components/code-html";
 @import "components/features";
 @import "components/person";
 @import "components/nav";
@@ -23,6 +24,6 @@
 @import "pages/home";
 @import "pages/converter";
 
-body {
-    height: 200vh;
-}
+// body {
+//     height: 200vh;
+// }

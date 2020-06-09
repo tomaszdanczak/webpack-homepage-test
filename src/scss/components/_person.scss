@@ -1,28 +1,47 @@
 .person {
+    grid-area: person;
     // background-color: #ccc;
     border: 2px solid black;
-    grid-column: 3/ span 1;
-    grid-row: 2/ span 1;
-    padding: 20px;
-    margin-left: 30px;
+    // grid-column: 3/ span 1;
+    // grid-row: 2/ span 1;
+    padding: 2rem;
+    margin-left: 3rem;
+
 
     &__picture-box {
-        margin-bottom: 16px;
+        margin-bottom: 1.6rem;
+
+        @media screen and (max-width: $tab-land){
+            text-align: center;
+            padding: 2rem;
+        }
     }
 
     &__image {
         width: 100%;
         border-radius: 500px;
+
+        @media screen and (max-width: $tab-land){
+            width: 50%;
+            text-align: center;
+        }
+
     }
 
     &__description {
         color:  #222;
         text-align: center;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-family: Helvetica;
-        margin-bottom: 26px;
+        margin-bottom: 2.6rem;
         display: block;
         line-height: 1.5;
+        @media screen and (max-width: $tab-land){
+            font-size: 2rem;
+        }
+        @media screen and (max-width: $tab-port){
+            font-size: 3rem;
+        }
     }
     
     &__paragraph {

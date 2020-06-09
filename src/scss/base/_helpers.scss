@@ -1,3 +1,10 @@
 .u-strong {
     font-weight: 700;
 }
+
+.u-scrool {
+    @media screen and (max-width: $tab-port){
+        overflow: scroll;
+    }
+    
+}

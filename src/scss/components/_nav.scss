@@ -7,6 +7,10 @@
     background-color: #fff;
     transition: height 300ms ease, box-shadow 300ms ease;
 
+    @media screen and (max-width: $tab-land){
+        
+    }
+
     &--sticky {
         box-shadow: rgba(34,34,34,0.1) 0 5px 10px;
         height: 82px;
@@ -16,6 +20,7 @@
         display: flex;
         justify-content: space-between;
         max-width: 1200px;
+        width: 80%;
         margin: auto;
         align-items: center;
         position: relative;

@@ -1,13 +1,20 @@
-.code-html {
+.code-css {
     padding: 16px;
     background-color: #f6f8fa;
-    // background-color: red;
-
-    &__tag {
+    
+    &__selector {
         color: #22863a;
     }
 
-    &__attr {
+    &__property {
         color: #005cc5;
+    }
+
+    &__value {
+
+    }
+
+    &__other {
+
     }
 }

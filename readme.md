@@ -1,3 +1,4 @@
+My website is available [here](https://tomaszdanczak.github.io/webpack-homepage-test/)
 
 # Tydzień II
 

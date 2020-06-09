@@ -1,13 +1,13 @@
 import '../scss/main.scss';
 
-const el = document.querySelector(".el--js")
-const textarea__input = document.querySelector(".textarea__input--js")
+const el = document.querySelector(".converter__paragraph--js")
+const textarea__input = document.querySelector(".converter__area-input--js")
 textarea__input.value = `<main>
     <header class="header">header</header>
 </main>`
-const textarea__output = document.querySelector(".textarea__output--js")
+const textarea__output = document.querySelector(".converter__area-output--js")
 
-const button = document.querySelector(".button__convert--js")
+const button = document.querySelector(".converter__button--js")
 button.addEventListener("click", (e)=>{
     e.preventDefault();
     console.log(textarea__input.value)

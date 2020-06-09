@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>converter</title>
 </head>
-<body>
-    <form action="" class="form">
-        <textarea name="" value="" cols="30" rows="10" class="textarea__input textarea__input--js"></textarea>
-        <textarea name=""  cols="30" rows="10" class="textarea__output textarea__output--js"></textarea>
-        <button class="button__convert--js">Zamień</button>
+<body class="converter">
+    <form action="" class="converter__form">
+        <label class="converter__label" for="area-input">HTML do zamiany</label>
+        <textarea class="converter__area converter__area-input converter__area-input--js" name="area-input" value="" cols="30" rows="10" class="textarea__input textarea__input--js"></textarea>
+        <label class="converter__label" for="area-output">HTML do umieszczenia na stronie</label>
+        <textarea class="converter__area converter__area-output converter__area-output--js" name="area-output"  cols="30" rows="10" class="textarea__output textarea__output--js"></textarea>
+        <button class="converter__button converter__button--js">Zamień</button>
     </form>
-    <div class="el--js"></div>
+    <div>
+    <h2 class="converter__header">Podgląd</h2>
+    <p class="converter__paragraph converter__paragraph--js"></p>
+</div>
 </body>
 </html>

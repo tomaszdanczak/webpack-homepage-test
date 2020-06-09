@@ -1,0 +1,73 @@
+
+
+.converter {
+    width: 100vw;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: start;
+    height: 100vh;
+    padding: 2rem;
+
+    &__form {
+        width: 50vw;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    &__area {
+        width: 100rem;
+        border: 2px solid black;
+        width: 60vw;
+        margin-bottom: 3rem;
+        padding: 1rem;
+
+    }
+    &__area-input {
+        width: 100rem;
+        border: 2px solid black;
+    }
+
+    &__area-output {
+        width: 100rem;
+    }
+
+    &__button {
+        border: 2px solid red;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        &:link,
+        &:visited {
+            transition: all .2s;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        &:hover,
+        &:active {
+            // color: $color-primary;
+            transform: scale(1.1);
+            // text-decoration: underline;
+        }
+    }
+
+    &__header {
+        width: 60vw;
+        text-align: center;
+    }
+
+    &__paragraph {
+        width: 60vw;
+        display: block;
+    }
+}

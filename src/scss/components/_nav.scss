@@ -33,6 +33,25 @@
     &__brand-link {
         text-decoration: none;
         color: $color-grey-dark-1;
+
+        &:link,
+        &:visited {
+            color: $color-grey-dark-1;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            font-size: 17px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        &:hover,
+        &:active {
+            // color: $color-primary;
+            transform: scale(1.1);
+            // text-decoration: underline;
+        }
     }
 
     &__elements {

@@ -83,5 +83,17 @@
         text-transform: uppercase;
         float: right;
         align-self: flex-end;
+
+        &:link,
+        &:visited { 
+            transition: all .2s;
+        }
+
+        &:hover,
+        &:active {
+            background-color: lighten(#005cbf, 5%);
+            // color: 
+            transform: scale(1.05);
+        }
     }
 }

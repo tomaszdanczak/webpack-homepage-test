@@ -1,0 +1,27 @@
+.footer {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 4rem 0 .8rem;
+    max-width: 1200px;
+    margin: 40px auto 40px;
+
+    display: flex;
+    justify-content: space-around;
+
+
+    &__link {
+
+        &:link,
+        &:visited {
+            color: $color-grey-dark-1;
+            text-decoration: none;
+            display: inline-block;
+            
+        }
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}

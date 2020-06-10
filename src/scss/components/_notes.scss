@@ -1,5 +1,5 @@
 .notes {
-    background-color: #fff;
+    background-color: $color-white;
     width: 120rem;
     width: 80%;
     margin: 0 auto;
@@ -12,13 +12,13 @@
     
     &__article {
         border-radius: 3px;
-        border: 1px solid #d1d5da;
+        border: 1px solid $color-light;
         padding: 3.2rem;
     }
 
     &__article-header {
         font-size: 3.2rem;
-        border-bottom: 1px solid #eaecef;
+        border-bottom: 1px solid $color-light-2;
         margin-bottom: 1.6rem;
         margin-top: 2.4rem;
         padding-bottom: 1rem;

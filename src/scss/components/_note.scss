@@ -22,12 +22,12 @@
     }
 
     &__important {
-        background-color: #f8d7da;
+        background-color: $color-powder-pink;
         padding: 2px 5px;
     }
 
     &__link {
-        color: #0366d6;
+        color: $color-blue-5;
         text-decoration: none;
 
         &:hover {

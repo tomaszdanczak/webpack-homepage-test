@@ -1,13 +1,13 @@
 .code-css {
     padding: 16px;
-    background-color: #f6f8fa;
+    background-color: $color-grey-2;
     
     &__selector {
-        color: #22863a;
+        color: $color-green;
     }
 
     &__property {
-        color: #005cc5;
+        color: $color-blue-4;
     }
 
     &__value {

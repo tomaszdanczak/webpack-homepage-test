@@ -32,14 +32,8 @@ html {
 
 body {
     box-sizing: border-box;
-    // width: 65rem;
-    // margin: 0 auto;
-    // height: 200vh;
     font-size: 1.6rem;
     color: #24292e;
-    // background-color: #222;
-    // font-family: 'Roboto', sans-serif;
-    // font-family: 'Arial', sans-serif;
     position: relative;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -57,6 +51,6 @@ body {
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 1.3px;
-    background-color: yellow;
-    color: black;
+    background-color: $color-yellow;
+    color: $color-black;
 }

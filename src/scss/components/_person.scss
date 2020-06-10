@@ -1,9 +1,6 @@
 .person {
     grid-area: person;
-    // background-color: #ccc;
-    border: 2px solid black;
-    // grid-column: 3/ span 1;
-    // grid-row: 2/ span 1;
+    border: 2px solid $color-black;
     padding: 2rem;
     margin-left: 3rem;
 

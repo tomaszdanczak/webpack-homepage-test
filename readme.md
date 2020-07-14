@@ -1121,3 +1121,137 @@ Należy dołożyć dwa pliki
 #### Hydrapp - workflow
 1. sds
 2. fdfd
+
+# Tydzień XI
+### JS: destrukturyzacja i spread operator
+#### Destrukturyzacja
+- Destrukturyzacja obiektu:
+	```javascript
+	const person = {name: 'tomek', age: 20}
+
+	console.log(person.name)
+
+	const {name, age} = person; 
+
+	console.log(name);
+
+	person.name = "kamil";
+
+	console.log(name);   // tomek
+	console.log(person.name);   // kamil
+	```
+- Destrukturyzacja tablicy:
+	```javascript
+	const food =['apple','kiwi','orange'];
+
+	console.log(food);
+
+	const [first, second] = food;
+
+	console.log(first);
+	```
+#### Spread operator
+- Spreaad operator na obiektach (operator "rozsmarowuje" obiekt):
+	```javascript
+	const person = {
+	  name: 'tomek',
+	  age: 20
+	}
+
+	const address = {
+	  city: 'Łowicz',
+	  country: 'Poland'
+	}
+
+	console.log(person);
+	console.log(address);
+
+	const personWithAddress = {
+	  ...person,
+	  ...address
+	}
+
+	console.log(personWithAddress);
+	```
+- Spread operator na tablicach:
+	```javascript
+	const fruits = ['apple','kiwi','orange'];
+	const drinks = ['water','juice','beer'];
+
+	console.log(fruits);
+	console.log(drinks);
+
+	const fruidsAndDrinks = ["banana", ...fruits, "plum", ...drinks, "milk"];
+	console.log(fruidsAndDrinks);
+	```
+### API - POSTMAN
+
+Link do pobrania [POSTMANA](https://www.postman.com/downloads/).
+
+#### Użycie API Githuba
+- Dostęp do API:
+- Wyświetlenie publicznych repozytoriów użytkownika:
+- Użycie zapytania w POSTMAN
+- Dodanie parametrów do zapytania:
+
+### JS: Fetch API
+[![Important](img/important4.svg)]()
+Zamienić na ważny rozdział (pomarańczowy napis z wykrzyknikiem)
+#### PROMISE - szablon (console.log może się wywołać przed promisem, działa asynhronicznie)
+```javascript
+something()
+  .then((response)=> {
+  // do something
+  }).catch((error)=> {
+  // 
+  })
+  
+console.log("test")
+
+```
+	
+#### FETCH - szablon	
+```javascript
+fetch("https://api.github.com/users/tomaszdanczak/repos")
+.then(resp => resp.json())
+.then(resp => {
+  // w resp mamy jsona z odpowiedzią
+  console.log(resp);
+})
+.catch(error => {
+  console.log(error)
+})
+
+```
+
+#### Praktyczne użycie FETCH
+
+Javascript:
+```javascript
+fetch("https://api.github.com/users/tomaszdanczak/repos")
+.then(resp => resp.json())
+.then(resp => {
+  // w resp mamy jsona z odpowiedzią
+  for (let repo of resp) {
+    const {name, html_url} = repo;
+    const repositoryList = document.querySelector('.list--js');
+    const myTemplate = `<li>
+${name} <a href="${html_url}" title="link do repozytorium ${name} na githubie">link do githuba</a>
+</li>`;
+    repositoryList.innerHTML += myTemplate;
+    }
+})
+.catch(error => {
+  console.log('nie udało się pobrać');
+})
+```
+
+Html:
+```html
+<main>
+  <h1>Moje repozytoria</h1>
+  <ul class="list--js">
+    
+  </ul>
+</main>
+```

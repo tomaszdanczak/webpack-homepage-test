@@ -1255,3 +1255,117 @@ Html:
   </ul>
 </main>
 ```
+
+# Tydzień XII
+### Multimedia
+#### Audio:
+```html
+<audio src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3" controls></audio>
+```
+#### Video (używać MP4)
+```html
+<video src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" controls></video>
+```
+
+#### Sterowanie audio i video za pomocą JavaScriptu (simple player):
+HTML:
+```html
+<video  class="video video--js" src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" controls></video>
+  
+<button class="play play--js">play</button>
+<button class="pause pause--js">pause</button>
+<button class="stop stop--js">stop</button>
+```
+JavaScript:
+```javascript
+const video = document.querySelector(".video--js");
+const playButton = document.querySelector(".play--js");
+const pauseButton = document.querySelector(".pause--js");
+const stopButton = document.querySelector(".stop--js");
+
+playButton.addEventListener("click", e=>{
+  video.play();
+})
+
+pauseButton.addEventListener("click", e=>{
+  video.pause();
+})
+
+stopButton.addEventListener("click", e=>{
+  video.pause();
+  video.currentTime = 0;
+})
+```
+#### Youtube
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oWHaDSeIY7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+### Frameworki CSS
+#### [Bootstrap](https://getbootstrap.com/)
+- [Grid Example](https://getbootstrap.com/docs/4.5/examples/grid/#containers)
+- [Forms](https://getbootstrap.com/docs/4.5/components/forms/)
+- Starter template:
+	```html
+	<!doctype html>
+	<html lang="en">
+	  <head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	    <title>Hello, world!</title>
+	  </head>
+	  <body>
+	    <h1>Hello, world!</h1>
+
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	  </body>
+	</html>
+	```
+#### [tailwindcss](https://tailwindcss.com/)
+
+### CSS ~ + > []
+- (+)  selektor bezpośredniego rodzeństwa (dokładnie za)
+- (~) selektor ogólnego rodzeństwa
+- (>) selektor bezpośredniego dziecka
+- [attr=value] selektor atrybutu
+	+ [href] - wybiera wszystkie elementy z atrybutem href
+	+ [href="site.html"] - wyszukuje dokłądnej wartości
+	+ Linki zawierające coś
+		+ [href*="https"] - wyszukuje fragmen tekstu (wartość musi się gdzieś znaleźć)
+		+ [href^="https"] - dopasowuje wartość atrybutu rozpoczynającą się od https
+		+ [href$="pdf"] - dopasowuje wartość atrybutu kończącą się na pdf
+- [CSS Diner](https://flukeout.github.io/)
+
+### Licencje, grafiki, materiały
+#### Licencje
+- [MIT License](https://tldrlegal.com/license/mit-license)
+- [Creative Commons CC0](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
+#### Lista stron z darmowymi materiałami
+- [undraw.co](https://undraw.co/illustrations)
+- [flaticon.com](https://www.flaticon.com/)
+- [drawkit.io](https://www.drawkit.io/)
+- [unsplash.com](https://unsplash.com/)
+- [pixabay.com](https://pixabay.com/)
+- [CC Search](https://ccsearch.creativecommons.org/)
+
+### Różne
+- user.github.io (można utworzyć repozytorium o takiej nazwie, będzie dostępne pod takim samym linkiem ja nazwa)
+- uzupełnić sekcję About każdeg repozytorium uzupełnić adresy do repozytoriów)
+uzupełnić 
+- mail:
+  ```html
+	<a href="mailto:tomaszdanczak@gmail.com">napisz do mnie</a>
+  ```
+- tel:
+  ```html
+	<a href="tel:+48123123123">zadzwoń</a>
+  ```

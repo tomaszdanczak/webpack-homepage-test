@@ -119,3 +119,129 @@ Przykład użycia klas:
 - gitlens - rozszerzenie do VSC
 - `Ctrl + Alt + F` - zamiana tekstu w VSC - używać jeżeli chcemy np. dodać tę samą klasę do wszystkich akapitów
 - `Ctrl + C` - kasuje ostatnie polecenie bez jego wykonywania (w konsoli)
+
+# Tydzień V
+### JavaScript
+- operator warunkowy
+  ```javascript
+     (zmienna1 > zmienna2) ? console.log('true'):console.log('false');
+     //-----------------------------
+     const amIOld = (age > 70) ? "yes":"no";
+     
+     console.log(amIOld);
+  ```
+- funkcja strzałkowa
+  ```javascript
+    const calculateFat = (x) => {
+    
+    {
+    //-----------------------------
+    const calculateFat = x => {
+    
+    {
+  ```
+- funkcja podmieniająca kontent w elemencie (przyjmuje referencje do elementu i nowy kontent)
+  ```javascript
+    function createContent(querySelectorContent, content) {
+    const element = document.querySelector(querySelectorContent);
+    element.innerHTML = content;
+    }
+    
+    createContent('.week-summary__description--js", "Witaj Świecie");
+  ```
+- zwykła deklaracja funkcji i arrow function
+  ```javascript
+    function greetOld(age, firstName) {
+      console.log(
+        `Witaj Drogi Odwiedzający, nazywam się $(firstName) i mam $(age) lata.`
+        );
+    }
+    // Arrow Function
+    const greet = (age, firstName) => {
+      console.log(
+        `Witaj Drogi Odwiedzający, nazywam się $(firstName) i mam $(age) lata.`
+        );
+    }
+  ```
+### JavaScript - obiekty
+- Obiekt z właściwościami prostymi, metodami   obiektem zagnieżdżonym
+```javascript
+  const deathStar = {
+    diameter: 120000,
+    fire: (target) => {
+      console.log('${target} destroy`}
+    },
+    isOperating: true,
+    name: "Death Star",
+    levels: 357,
+    population: 1000,
+    isLightOn: true,
+    commander: {
+      name: "Darth Vader",
+      age: 44
+    }
+  }
+```
++ odwołanie się do właściwości obiektu
+```javascript
+  console.log(deathStar.name)
+```
++ wywołanie metody z parametrami
+```javascript
+  deathStar.fire('Rebel ship');
+```
++ odwołanie się do właściwości zagnieżdżonego obiektu (notacja dot)
+ ```javascript
+  console.log(deathStar.commander.name)
+```
++ odwołanie się do właściwości obiektu (notacja bracket)
+ ```javascript
+  const myProperty = name;
+  
+  console.log(deathStar[myProperty])
+```
++ przypadek, kiedy jest konieczne użycie notacji bracket a dot by się nie sprawdziło:
++ odwołanie się do właściwości zagnieżdżonego obiektu (notacja dot)
+ ```javascript
+  const showMeProperty = (myProperty) => {
+    console.log(deathStar[myProperty]);
+  }
+  
+  showMeProperty('levels')
+```
+
+### Stylowanie
+- Tabelą dobrze jest nadać szerokość 100% (domyślnie się nie rozszerzają)
+### Różne
+- przy goooglowaniu rzeczy najlepiej zaznaczyć zakres do roku wstecz (we frontendzie wiedza szybko się dezaktualizuje)
+- używać normalize.css oraz
+```css
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+  }
+
+  body {
+    box-sizing: border-box;
+    }
+  }
+```
+- wywołanie `console.log(console)` wyświetli w konsoli wszystkie metody i właściwości
+
+  <img src="img/consolelog.png" width="50%">
+  
+- sprawdzenie, które rzeczy są pobierane z cache (można wyłączyć cache - `disable cache`). `Ctrl + F5` - twarde odświeżenie (wszystko pobiera na nowo)
+
+  <img src="img/disable cache.PNG" width="50%">
+  
+- gdy utknie się z kodem, porozmawiać z kaczuszką :)
+
+  <img src="img/duck.PNG" width="30%">

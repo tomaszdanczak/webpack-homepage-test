@@ -1020,3 +1020,104 @@ localStorage.setItem('entry', entryInput.value)
 })
 
 ```
+
+# Tydzień X
+ ### SVG
+ #### Dodawanie svg
+ - grafikę w formacie svg możemy dodać do strony za pomocą znacznika <img>:
+   ```html
+    <img src="plik.svg" alt="logo">
+   ```
+  - możemy ją także dodać za pomocą znacznika <svg>:
+    ```html
+    <svg width="100" height="100">
+	   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+	   Sorry, your browser does not support inline SVG.
+    </svg>
+    ```
+  #### Dodawanie stylowanie dzięki dodaniu klasy
+  Dzięki dodaniu grafiki svg znacznikiem svg można dodać klasę do elementów i stylować jak inne elementy html 
+  ```html
+    <svg width="100" height="100">
+      <circle class="element" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+      Sorry, your browser does not support inline SVG.
+    </svg>
+   ```
+	
+   ```css
+	.element {
+  		opacity: .5;
+  		transition: opacity .3s ease-in;
+	}
+
+	.element:hover {
+  		opacity: 1;
+	}
+   ```
+#### Animacja grafiki SVG
+```css
+@keyframes show {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate {
+  animation: show .5s ease-in infinite alternate;
+}		
+```
+```html
+<svg width="100" height="100">
+   <circle class="animate" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+   Sorry, your browser does not support inline SVG.
+</svg>
+```
+### Head & OpenGraph
+- Brak pozwolenia na powiększanie strony
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+- własność description
+```html
+  <meta name="description" content="My og description of my website">
+```
+- Open Graph - protokuł opisujący stronę za pomocą tagów meta
+```html
+   <!-- Title -->
+   <meta property="og:title" content="My og title" />
+   <!-- OPTIONAL description. 2-4 sentences. -->
+   <meta property="og:description" content="My og description of my website" />
+   <!-- full url with http(s) ie. https://tomaszdanczak.github.io/webpack-homepage-test/ -->
+   <meta property="og:url" content="https://tomaszdanczak.github.io/webpack-homepage-test/" />
+   <!-- full url to the image with http(s) ie. https. Facebook suggests at least 1200 x 630. -->
+   <meta property="og:image" content="" />
+```
+#### Różne
+- plik favicon.ico umieszczamy w głównym katalogu. Nie trzeba definiować w kodzie odwołania do niego..
+- przydatna strona do tworzenia grafik: [www.canva.com](www.canva.com)
+- sprawdzanie opisów OG: [www.debug.iframely.com](www.debug.iframely.com)
+### WAI, WCAG, A11y, ARIA
+- WCAG [https://www.w3.org/WAI/WCAG21/quickref](https://www.w3.org/WAI/WCAG21/quickref)
+- A11y [https://www.a11yproject.com](https://www.a11yproject.com)
+- Widzialni [https://www.widzialni.pl](https://www.widzialni.pl)
+
+Tworzenie stron (kilka rad odnośnie dostępności)
+- Pisz semantycznie
+- Trzymamy kontrast
+- Dobrze dobieramy kolory
+- Unikamy autoplay
+- Nie ograniczaj rzeczy czasowo
+- Nie usuwaj :focus
+- Używaj alt (i kończ opisy kropką!)
+- ARIA - dodaje np. opisy pól formularzy, gdy nie mamy label (własność pomaga, gdy korzystamy z aplikacji wspomagających)
+### PWA
+Należy dołożyć dwa pliki
+- manifest.json
+
+### Hydrapp
+#### Hydrapp - workflow
+1. sds
+2. fdfd

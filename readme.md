@@ -667,3 +667,356 @@ h1 {
   padding: var(--small-padding);
 }
 ```
+
+# Tydzień IX
+
+### Użycie biblioteki moment w projekcie (homework)
+
+#### Instalacja i przykład użycia
+- instalacja biblioteki
+
+	```console
+	npm install moment
+	```
+- import biblioteki w pliku JS
+	```javascript
+	import moment from 'moment';
+	```
+- Użycie jakiejś funkcji z bibioteki
+
+	```javascript
+	console.log(moment().startOf('day').fromNow());
+	```
+- [Link](https://momentjs.com/) do dokumentacji biblioteki Moment JS
+
+#### Wstrzyknięcie rezultatu uzyskanego z Moment JS do HTML
+
+HTML:
+
+```html
+<p>Od początku dnia minęło:<span class="time--js"></span></p>
+```
+
+JS:
+```javascript
+const timePlaceholder = document.querySelector('.time--js');
+
+timePlaceholder.innerHTML = moment().startOf('day').fromNow();
+```
+
+### Dark Mode (homework)
+
+- przykładowa strona z buttonem zmieniającym tryb
+
+	```html
+	<main>
+	  <h1>Cześć</h1>
+	  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid totam eos, ab sed accusamus laborum facilis neque nihil distinctio officiis dolore nostrum quidem magni laudantium enim repellat nemo praesentium saepe.</p>
+	  <button class="mode--js">Zmień tryb</button>
+	</main>
+	```
+
+- definicja Custom Properties (zmiennych CSS) i przypisanie ich do tła strony i koloru tekstu
+	```css
+	:root {
+	  --background-color: #fefefe;
+	  --text-color: #333333;
+	}
+
+	body {
+	  background: var(--background-color);
+	  color: var(--text-color);
+	}
+	```
+- logika Java Script:
+	```javascript
+	let isDark = false;
+
+	const switchModes = document.querySelector('.mode--js');
+
+	switchModes.addEventListener('click', ()=>{
+	  if(isDark) {
+	    document.documentElement.style.setProperty('--background-color', '#fefefe');
+	    document.documentElement.style.setProperty('--text-color', '#333333');
+
+	    isDark = false;
+	  } else {
+	    document.documentElement.style.setProperty('--background-color', '#333333');
+	    document.documentElement.style.setProperty('--text-color', '#fefefe');
+
+	    isDark = true;
+	  }
+	})
+	```
+### Google fonts
+- należy wybrać Latin Extended i wpisać zażółć gęślą jaźń żeby łatwo było można odfiltrować tylko te fonty które posiadają wszystkie polskie diakrytyczne znaki
+
+- czcionkę dołączamy do projektu za pomocą import albo link:
+
+	```html
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap');
+	</style>
+
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
+	```
+- użycie czcionki:
+
+	```css
+	font-family: 'Lato', sans-serif;
+	```
+### GIT: branche
+
+- wypisanie gałęzi:
+	```console
+	git branch
+	```
+- utworzenie gałęzi:
+	```console
+	git branch nazwa_gałęzi
+	```
+- przejście na gałąź:
+	```console
+	git branch nazwa_gałęzi
+	```
+- utworzenie gałęzi od razu z przejściem na nią:
+	```console
+	git branch -b nazwa_gałęzi
+	```
+- wypchnięcie brancha na GitHuba (użyć git push i skopiować podpowiedź)
+	```console
+	git push
+	git push --set-upstream origin nazwa_brancha
+	```
+- mergowanie do mastera (trzeba przejść na master)
+	```console
+	git checkout master
+	git branch -b nazwa_gałęzi
+	```
+- usunięcie gałęzi:
+	```console
+	git branch -d nazwa_gałęzi
+	```
+
+### MARKDOWN
+- dodanie odnośnika
+	```console
+	[nazwa](adres)
+	```
+- dodanie grafik. W projekcie założyć katalog gh i w nim umieszczać grafiki używane w README.md
+	```console
+	![Alt obrazka](gh/nazwa_obrazka.png)
+	```
+Kwafratowe przed okrągłymi. K przed O. KO
+- `Wyróżnienie fragmentu tekstu`
+	```console
+	`tekst`
+	```
+- *pochylenie tekstu*
+	```console
+	*tekst*
+	```
+- **pogrubienie tekstu**
+	```console
+	**tekst**
+	```
+- ***pochylenie i pogrubienie tekstu***
+	```console
+	***tekst***
+	```
+- żeby zobaczyć podgląd zmian w README.md na GitHubie należy kliknąć zakładkę Preview changes
+
+### JS: Tablice
+#### Dodawanie / usuwanie elementów do/z tablicy
+- dodanie elementu na końcu
+	```javascript
+	myArray.push()
+	```
+- usunięcie elementu z końca
+	```javascript
+	myArray.pop()
+	```
+- dodanie elementu na początku
+	```javascript
+	myArray.unshift()
+	```
+- usnięcie elementu z końca
+	```javascript
+	myArray.shift()
+	```
+- szukanie indeksu elementu
+	```javascript
+	myArray.indexOf('elem');
+	```
+- sprawdzanie czy element występuje w tablicy (uważać bo index 0 jest konwertowany na false, a element nieznaleziony -1 na true):
+	```javascript
+	if(myArray.indexOf('tekst')>=0) {
+	  console.log('mam ten element');
+	} else {
+	  console.log('nie mam elementu :(')
+	}
+	```
+Dwie metody łatwe do pomylenia. Nazwy różnią się tylko małą literą p.
+
+- usuwanie elementów od danej pozycji (metoda działa na indeksie i zakresie). Metoda `zwraca i usuwa !!!` elementy.
+	```javascript
+	myArray.splice(1,2)
+	```
+- pobranie n elementów od danej pozycji (metoda działa na indeksach). Metoda tylko `zwraca !!!` elementy.
+	```javascript
+	const newArray = myArray.slice(2,4)
+	```
+	
+#### Stringi
+Stringi zachowują się bardzo podobnie do tablic 
+```javascript
+const myString = 'Tomek';
+
+console.log(myString[5]);
+console.log(myString.length);
+```
+
+
+### JS: Pętle
+
+#### FOR
+
+Warunkien najczęściej jest wyrażenie ze znakiem mniejszości (mniejsze od jakiejś długości)
+
+```javascript
+for(let i = 0; i < 3; i++) {
+  console.log('i` +  `wykoananie pętli');
+}
+```
+
+#### Pętla FOR i tablice
+
+```javascript
+const myArray = ['apple','peach', 'plum'];
+
+for(let i = 0; i < myArray.length; i ++) {
+ console.log('Pod indeksem ' + i + 'jest element ' + myArray[i])
+}
+```
+
+#### WHILE
+
+```javascript
+let myNumber = 0;
+
+while(myNumber < 10) {
+  console.log('hello');
+  
+  myNumber++;
+}
+```
+#### DO WHILE
+
+```javascript
+let n = 9;
+
+do {
+  console.log(n);
+  n = n + 3;
+} while(n < 9);
+
+console.log(n);
+```
+
+#### FOR IN (własność in obiekt)
+
+```javascript
+const tomek = {
+  name: 'tomek',
+  age: 20
+}
+
+for( let myProperty in tomek) {
+  console.log(myProperty);
+  console.log(tomek[myProperty]);
+}
+```
+
+#### FOR OF (element of tablica)
+
+```javascript
+const myArray = ['a', 'b', 'c'];
+
+for(let element of myArray) {
+  console.log(element);
+}
+```
+
+### JS: Przechowywanie danych
+
+Wartości Cookies, Local Storage i Session Storage możemy podejrzeć w zakładce Applicatin (devtools -> Application):
+(screen)
+
+#### Cookie (są już przestarzałe)
+
+- wyświetlenie ciasteczek
+	```javascript
+	  console.log(document.cookie);
+	```
+- ustawienie ciasteczek
+	```javascript
+	document.cookie = 'name = tomek';
+	```
+#### Local Storage (żyje do ręcznego wyczyszczenia)
+
+- ustawienei wartości
+	```javascript
+	localStorage.setItem('human', 'tomek');
+	```
+- pogranie wartości
+	```javascript
+	console.log(localStorage.getItem('human'));
+	```
+- usunięcie wpisu
+	```javascript
+	localStorage.removeItem('human');
+	```
+- zapisanie w Local Storage obiektu
+	```javascript
+	localStorage.setItem('nowyKlucz', JSON.stringify({name: 'tomek'}));
+	```
+- odczytanie JSON
+	```javascript
+	const myResult = localStorage.getItem('nowyKlucz');
+	
+	const myNewObject = JSON.parse(myResult));
+	
+	myNewObject.newProperty = 'hi';
+	
+	
+	```
+#### Session Storage (żyje do zamknięcia zakładki przeglądarki)
+
+Session Storage używamy tak samo jak Local Storege. W wywoładniu używamy sessionStorage.
+
+#### Podstawowy Flow aplikacji korzystającej z Local Storage
+HTML
+```html
+<input class="entry--js">
+<button class="action--js">Zapisz</button>
+```
+
+JS
+```javascript
+const entry = localStorage.getItem('entry');
+let result = '';
+
+if (entry) {
+result = entry;
+}
+
+const entryInput = document.querySelector('.entry--js')
+entryInput.value = result;
+
+const button = document.querySelector('.action--js')
+
+button.addEventListener('click', ()=> {
+localStorage.setItem('entry', entryInput.value)
+})
+
+```

@@ -236,15 +236,15 @@ Przykład użycia klas:
 ```
 - wywołanie `console.log(console)` wyświetli w konsoli wszystkie metody i właściwości
 
-  <img src="img/consolelog.png" width="50%">
+  <img src="gh/consolelog.png" width="50%">
   
 - sprawdzenie, które rzeczy są pobierane z cache (można wyłączyć cache - `disable cache`). `Ctrl + F5` - twarde odświeżenie (wszystko pobiera na nowo)
 
-  <img src="img/disable cache.PNG" width="50%">
+  <img src="gh/disable cache.PNG" width="50%">
   
 - gdy utknie się z kodem, porozmawiać z kaczuszką :)
 
-  <img src="img/duck.PNG" width="30%">
+  <img src="gh/duck.PNG" width="30%">
 
 # Tydzień 6
 
@@ -345,7 +345,7 @@ switch(myNumber) {
       </p>  
     </fieldset>
     ```
-    <img src="img/fieldset.PNG" width="40%">
+    <img src="gh/fieldset.PNG" width="40%">
     
     - Element `radio` pozwala wybierać jeden element z grupy możliwych opcji
 
@@ -363,7 +363,7 @@ switch(myNumber) {
           </p>
         </fieldset>
       ```
-    <img src="img/radio.PNG" width="40%">
+    <img src="gh/radio.PNG" width="40%">
  #### Formularze: number, range, tel, email, password 
  -  Range - element będący graficznym interfejsem do wprowadzania danych
     ```html
@@ -605,7 +605,7 @@ Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy i
 #### Budowa Webpacka
 - W katalogu src znajdują się pliki na których pracujemy:
 
-  <img src="img/8/webpack-hierarchy.PNG" width="20%">
+  <img src="gh/8/webpack-hierarchy.PNG" width="20%">
   
 	- assets
 	- js
@@ -621,23 +621,23 @@ Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy i
 
 - Dodawanie pliku do katalogu pages: 
 
-  <img src="img/8/webpack-new-file.PNG" width="40%">
+  <img src="gh/8/webpack-new-file.PNG" width="40%">
   
 - Dodanie wpisu do pliku webpack.common.js. Tworzenie nowej instancji wtryczki do HTML. Po dodaniu wpisu trzeba zrestartować serwer. 
 
-	<img src="img/8/webpack-common-js.PNG" width="100%">
+	<img src="gh/8/webpack-common-js.PNG" width="100%">
 
 #### Dodawanie pliku JS:
 - Plik tworzymy w katalogu src/js. 
 
-  <img src="img/8/webpack-new-file-js.PNG" width="100%">
+  <img src="gh/8/webpack-new-file-js.PNG" width="100%">
 
 - Dodajemy wpis do tablicy (patrz wyżej)
 
 #### Dodawanie styli
 - Import styli w pliku index.js 
 
-	<img src="img/8/import-css-file.PNG" width="100%">
+	<img src="gh/8/import-css-file.PNG" width="100%">
 - normalize możemy zainstalować przez npm i zaimportować w pliku ze stylami w następujący sposób:
 
 	```css
@@ -1195,8 +1195,7 @@ Link do pobrania [POSTMANA](https://www.postman.com/downloads/).
 - Dodanie parametrów do zapytania:
 
 ### JS: Fetch API
-[![Important](img/important4.svg)]()
-Zamienić na ważny rozdział (pomarańczowy napis z wykrzyknikiem)
+
 #### PROMISE - szablon (console.log może się wywołać przed promisem, działa asynhronicznie)
 ```javascript
 something()

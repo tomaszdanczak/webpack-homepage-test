@@ -473,3 +473,70 @@ switch(myNumber) {
  - Flexbox sprawdza się dobrze do pozycjonowania, centrowania elementów wewnątrz innych elementów. Nie używać flexboxa do budowania całych layoutów.
  - `button` - powinien być używany do interakcji na stronie
  - `a` - powinien być używany do nawigacji
+
+# Tydzień VII
+ ### Node
+ #### Pierwsze kroki
+ - Uruchomienie skryptu w node. Należy wejść w konsoli w katalog ze skryptem, a następnie uruchomić
+   ```console
+    node skrypt.js
+   ```
+ - Tworzenie pliku package.json. Należy w konsoli wpisać (opcja -y domyślnie uzupełnia)
+    ```console
+    npm init -y
+   ```
+    co utworzy
+    ```console
+     {
+      "name": "playground",
+      "version": "1.0.0",
+      "descripton": "",
+      "main": "script.js",
+      "scripts": "echo \"Error: no test specified\" &&
+     }
+    ```
+  - Dodanie paczki do projektu
+    ```console
+     npm install <nazwa_paczki> --save
+     npm install <nazwa_paczki> --save-dev
+     
+     npm install --save normalize.css
+    ```
+  - Odtworzenie katalogu node_modules
+    ```console
+      npm install
+    ```
+### Praca z node-sass
+1. Instalacja pakietu
+    ```console
+    npm install node-sass
+    ```
+1. Zamiana scss na css
+    ```console
+    npx node-sass main.scss main.css
+    ```
+1. Dodanie automatyzacji (śledzenie zmian w plikach scss)
+    ```console
+    npx node-sass -w main.scss main.css
+    ```
+1. Dodanie skryptu
+
+1. Wywołanie skryptu
+    ```console
+    npm run sass
+    ```
+1. Zmodyfikowanie skryptu (organizacja plików scss i css w katalogach)
+    ```console
+    "scripts": {
+      "sass": "npx node-sass -w scss/msin.scss main.css",
+      "test": "echo\"Error: no test specified\" && exit1"
+      },
+    }
+    ```
+### Różne
+- plik `.gitignore` zawiera nazwy ignorowanych plików i katalogów (np. node_modules)
+   
+ ```html
+    <main>main</main>
+    <main class="main">main</main>
+```

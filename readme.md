@@ -73,3 +73,49 @@ Przykład użycia klas:
 - '<script src="main.js"><script/> - umieszczamy przed tagiem zamykającym `<body/>`
 - 'console.log(`Nazywam się ${name} i mam ${age} lat`); - template stringi mogą być łamene - łamania sią odzwierciedlane w konsoli
 - w tagu to samo słowo może być nazwą klasy i id: `<section class="features" id="features"><section/>`
+
+# Tydzień IV
+### Stylowanie
+- dzięki `display: inline-block`, możemy nadać margines dolny i górny na element liniowy (np. strong)
+- `min-height: 100vh` - nadaje elementowy wysokość conajmniej równą wysokości okna przeglądarki
+- gdy element dostanie `position: fixed`, to jego szerokość jest "zjadana" (tak jakby był inline-block), trzeba dać mu 100 % szerokości , żeby nic się nie zmieniło. Pamiętać o tym, gdy zmieniamy `<nav>` na fixed (gdy robimy przyklejoną nawigację)
+- `position: sticky;` - podobny do fixed, ale element przykleja się do góry strony dopiero jak o nią uderzy (wcześniej normalnie się przewija). Jeszcze nie wszędzie wspierana
+- `line-height` - używać, żeby poprawić czytelność wierszy
+- sposób na responsywny obrazek:
+  ```css
+     .image {
+          width: 100%;
+          max-width: 100px;
+          display: block;
+     
+     }
+  ```
+ - **floaty** używamy tylko do opływania np. obrazków 
+    + gdy jest problem z wychodzeniem elementu opływanego to dać `overflow=hidden`
+    + gdy jest problem z podchodzeniem treści do góry to dać `clear: both`
+### Przewijanie na górę strony
+```html
+<header id="top">
+  .
+  .
+  .
+<footer>
+  <a href="#top" class="top">na górę<a/>
+<footer/>
+```
+```css
+  .top {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+```
+### Różne
+- używać `block__element--js` dla elementów z którymi robimy coś w js
+- nie uczyć się na zapas
+- jeżeli przez półgodziny nie umie się czegość zrobić to pytać
+- jeżeli jest problem z projektem, to rozpisać go na jaknajmniejsze kawałkii próbować je rozwiązać (z rozwiązanych kawałków skłądać całe rozwiązanie)
+- jeżeli nie ma się pomysłu na projekt to znaleźć jakąś organizację pozarządową w mieście i im zrobić oraz rozwijać stronę
+- gitlens - rozszerzenie do VSC
+- `Ctrl + Alt + F` - zamiana tekstu w VSC - używać jeżeli chcemy np. dodać tę samą klasę do wszystkich akapitów
+- `Ctrl + C` - kasuje ostatnie polecenie bez jego wykonywania (w konsoli)

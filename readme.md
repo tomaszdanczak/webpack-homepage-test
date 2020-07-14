@@ -245,3 +245,231 @@ Przykład użycia klas:
 - gdy utknie się z kodem, porozmawiać z kaczuszką :)
 
   <img src="img/duck.PNG" width="30%">
+
+# Tydzień 6
+
+### JavaScript
+
+- #### Switch
+```javascript
+const myNumber = {name: 'maciek'};
+
+switch(myNumber) {
+  case 7: 
+    console.log('jestem siódemką');
+    break;
+  case 9:
+    console.log('jestem dziewiątką');
+    break;
+  default:
+    console.log('jestem czymś innym');
+}
+```
+- #### Operator warunkowy zamiast if else
+```javascript
+  if(32 > 30) {
+    console.log("to prawda");
+  } else {
+    console.log("to nieprawda");
+  }
+  
+  (32 > 30) ? console.log("to prawda") : console.log("to nieprawda");
+  
+  const result = (32 > 30) ? console.log("to prawda") : console.log("to nieprawda");
+```
+### Formularze
+- #### Formularze: form, input, label
+    + według specyfikacji tagi label i input powinny być zamknięte
+    ```html
+      <p>
+        <label for="firstName">Your name:<label/>
+        <input id="firstName" name="firstName">
+      <p/>
+    ```
+    + można opakować input w label, albo można nie używać opakowania i użyć atrybutu for (lepsze to pierwsze rozwiązaniem bo łatwiej stylować)
+  ```html
+    <main>
+      <h1>Forms playground<h1/>
+      <form>
+        <p>
+          <label for="firstName">Your name:</label>
+          <input id="firstName" name="firstName">
+        <p/>
+        <p>
+          <label>Your last name:
+            <input id="lastName" name="lastName">
+          </label>
+        <p/>
+      <form/>
+    <main/>
+  ```
+    + `value` - domyślna uzupełniona wartość inputa, `placeholder` - tekst podpowiedzi
+    ```html
+      <p>
+        <label for="firstName">Your name:<label/>
+        <input type="text" value="Maciek" placeholder="Wpisz swoje imię" id="firstName" name="firstName">
+      <p/>
+    ```
+    + stylowanie formularzy według BEM
+    ```html
+      <form class="form">
+        <label for="firstName">Your name:<label/>
+        <input class="form__input" type="text" value="Maciek" placeholder="Wpisz swoje imię" id="firstName" name="firstName">
+      <form/>
+    ```
+    ```css
+      .form {
+
+      }
+
+      &__input {
+        display: block;
+        width: 100%;
+      }
+    ```
+- #### Formularze: fieldset, radio, checkbox
+   - Element `fieldset` grupuje kontrolki o podobnym przeznaczeniu. Element `legend` zawiera objaśnienie przeznaczenia grupy kontrolek.
+   ```html
+    <fieldset>
+      <legend>Address</legend>
+      
+      <p>
+        <label>Street name:
+          <input
+             class="form__item"
+             id="streetName"
+             placeholder="Please enter street name"
+             name="streetName"
+             />
+        </label>
+      </p>  
+    </fieldset>
+    ```
+    <img src="img/fieldset.PNG" width="40%">
+    
+    - Element `radio` pozwala wybierać jeden element z grupy możliwych opcji
+
+      ```html
+        <fieldset>
+          <legend>Favourite icecream flavour</legend>
+          <p>
+              <label><input name="iceCream" type="radio" value="chocolate">Chocolate</label?
+          </p>
+          <p>
+              <label><input name="iceCream" type="radio" value="lemon">Lemon</label?
+          </p>
+          <p>
+              <label><input name="iceCream" type="radio" value="strawberry">Strawberry</label?
+          </p>
+        </fieldset>
+      ```
+    <img src="img/radio.PNG" width="40%">
+ #### Formularze: number, range, tel, email, password 
+ -  Range - element będący graficznym interfejsem do wprowadzania danych
+    ```html
+      <input type="range" min="0" max="100" step="5">
+    ```
+    Sposób na podejrzenie wartości range:
+    ```html
+      <input
+        class="form__item range--js"
+        id="range"
+        name="range"
+        type="range"
+        min="0"
+        max="100"
+        step="20"
+      />
+    ```
+    ```javascript
+    const myRange = document.querySelector('.range--js');
+    
+    myRange.value;
+    ```
+      
+ ### CSS Grid
+ 
+ #### Definiowanie siatki (właściwośi rodzica)
+ - `grid-template-columns` - definiuje ilość i rozmiar kolumn
+ - `grid-template-rows` - definiuje ilość i rozmiar wierszy
+ - `grid-gap` - definiuje odstępy
+ #### Funkcje przydatne przy definiowaniu siatki
+ - `repeat()`
+ - `minmax()`
+ - `1fr`
+ #### Rozmieszczenie elementów w siatce (pierwszy sposób)
+  ```css
+    .main {
+      display: grid;
+      grid-template-areas: "header header"
+                           "article aside"
+                           "footer footer";
+    }
+    
+    .header {
+      grid-area: header;
+    }
+  ```
+  #### Rozmieszczenie elementów w siatce (drugi sposób)
+
+  ```css
+    .header {
+      background: hotpink;
+      grid-column-start: 2;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  ```
+  
+ ### Media Queries
+   - Mediaqueries muszą być definiowane po podstawowych stylach (mediaqueries nie zwiększają specyficzności)
+    
+      ```css
+        @media screen and (max-width: 600px) {
+          body {
+
+          }
+        }
+      ```
+      
+   - Chowanie elementu
+      ```css
+        @media screen and (min-width: 768px) {
+          .mobile {
+            display: none;
+          }
+        }
+      ```
+ ### Eventy
+ 
+  - Elementowi z którym chcemy pracować w JavaScripcie dodać klasę z modyfikatorem `--js`
+    ```html
+      <button class="action--js">Zmień nagłówek</button>
+    ```
+  - Pobranie referencji do elementu, wywołane funkcji po zdarzeniu click
+    ```javascript
+      const myClick = () => {
+        console.log('kliknąłeś');
+      }
+      
+      const button = documen.querySelector(".action--js");
+      
+      button.addEventListener('click', myClick);
+    ```
+  - Odniesienie się do klikniętego elementu
+      ```javascript
+      button.addEventListener('click', e=> {
+        console.log(e.target);
+      });
+      ```
+### Hamburger menu
+### Różne
+ - Domyślne style elementów są zależne od systemowych (ikonki są upodobnione do systemowych)
+ - Można domyślnie zaznczyć element formularza, poprzez dodanie atrybutu `checked`. Atrybut może mieć wartość (`checked=checked`), ale nie musi
+ - `display: block` na label spowoduje, że labele będą nad elementami, które opisują
+ - Atrybut `required` nakazuje przeglądarce przeprowadzenie walidacji formularza
+ - CSS Grid najlepiej się sprawdza do budowania całych layoutów
+ - Flexbox sprawdza się dobrze do pozycjonowania, centrowania elementów wewnątrz innych elementów. Nie używać flexboxa do budowania całych layoutów.
+ - `button` - powinien być używany do interakcji na stronie
+ - `a` - powinien być używany do nawigacji

@@ -540,3 +540,130 @@ switch(myNumber) {
     <main>main</main>
     <main class="main">main</main>
 ```
+
+# Tydzień VIII
+
+### Import CSS/SCSS
+#### SCSS
+```scss
+@import "abstracts/variables";
+```
+#### CDN
+```scss
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+```
+### Import / Export JS
+Są dwie najpopularniejsze koncepcje modułów: CommonJS oraz ES6 Modules
+
+#### ES6 Modules (proste użycie)
+- HTML:
+	```html
+	<script src="main.js" type="module"></script>
+	```
+- JS Export (hello.js)
+	```javascript
+	export const hello = name => {
+	    return `Cześć ${name}`;
+	}
+	```
+- JS Import (main.js)
+	```javascript
+	import {hello} from './hello.js';
+
+	console.log(hello('Tomek'));
+	```
+#### ES6 Modules (export domyślny)
+Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy importu nie podajemy w nawiasach sześciennych. Dzięki exportowi domyślnemu nie musimy się martwić o konflikty w nazwach. 
+
+- Export (tomek.js)
+	```javascript
+	const tomek = {
+	    name: 'Tomek',
+	    age: 20
+	}
+	export default tomek;
+	```
+- Import (main.js)
+	```javascript
+	import human from './tomek.js';
+
+	console.log(human);
+	```
+
+### WTF Webpack StarterKit - pierwsze uruchomienie
+
+#### Workflow
+- Tworzymy Repozytorium na GitHubie: [StarterKit](https://github.com/maciejkorsan/wtf-webpack-starter/generate)
+- Klunujemy repozytorium na dysk (uruchamiamy komemndę klonowania będąc w katalogu dev) (git clone adres_do_repozytorium)
+- Wchodzimy do katalogu z repozytorium (cd nazwa_repozytorium)
+- Instalujemy zależności (npm install)
+- Kroki wykonywane też przy każdym kolejnym uruchomieniu 
+	- Uruchamiamy edytor (code .)
+	- Uruchamiamy Server Webpack (npm run start)
+	- Strona dostępna pod adresem: http://localhost:8080/
+
+#### Budowa Webpacka
+- W katalogu src znajdują się pliki na których pracujemy:
+
+  <img src="img/8/webpack-hierarchy.PNG" width="20%">
+  
+	- assets
+	- js
+	- pages (w którym znajduje się index.html). W pliku index.html nie ma znacznika link do stylów oraz script do stylów. Ścieżki podajemy względem plików źródłowych a nie serwerowych.
+	- scss
+- W pliku package.json mamy skonfigurowane trzy skrypty:
+	- start (uruchamia serwer w trybie developerskim)
+	- build (tworzy katalog wynikowy)
+	- publish
+### WTF Webpack StarterKit – dodawanie nowych plików, sourcemapy
+
+#### Dodawanie pliku HTML:
+
+- Dodawanie pliku do katalogu pages: 
+
+  <img src="img/8/webpack-new-file.PNG" width="40%">
+  
+- Dodanie wpisu do pliku webpack.common.js. Tworzenie nowej instancji wtryczki do HTML. Po dodaniu wpisu trzeba zrestartować serwer. 
+
+	<img src="img/8/webpack-common-js.PNG" width="100%">
+
+#### Dodawanie pliku JS:
+- Plik tworzymy w katalogu src/js. 
+
+  <img src="img/8/webpack-new-file-js.PNG" width="100%">
+
+- Dodajemy wpis do tablicy (patrz wyżej)
+
+#### Dodawanie styli
+- Import styli w pliku index.js 
+
+	<img src="img/8/import-css-file.PNG" width="100%">
+- normalize możemy zainstalować przez npm i zaimportować w pliku ze stylami w następujący sposób:
+
+	```css
+	@import "~normalize.css";
+	```
+
+### WTF Webpack StarterKit - budowanie projektu i publikacja
+- budowanie projektu (utworzenie katalogu dist). Zawartość katalogu dist publikujemy na serwerze.
+```console
+npm run build
+```
+- wszystko co znajduje się w katalogu public jest kopiowane bezpośrednio do katalogu dist
+- opublikowanie strony na GitHubie za pomocą gh-pages (*tworzy noby branch gh-pages*)
+```console
+npm run deploy
+```
+### Custom Properties (zmienne CSS)
+#### Definiowanie zmiennych	
+```css
+:root {
+  --small-padding: 8px;
+}
+```
+#### Użycie wartości zmiennej
+```css
+h1 {
+  padding: var(--small-padding);
+}
+```

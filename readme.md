@@ -1,8 +1,8 @@
-Strona jest do obejrzenia [tutaj](https://tomaszdanczak.github.io/webpack-homepage-test/) 🚀. 
-- 👍 Strona jest krótkim info o mnie. 
-- 👍 Umieściłem na niej część z moich notatek z najlepszego [kursu frontendu](https://cotenfrontend.pl) na polskim rynku: [WTF Co Ten Frontend](https://cotenfrontend.pl). 
-- 👍 Wszystkie moje notatki znajdują się w tym pliku readme.md
-- 👍 Napisałem w JS konwerter dodający znacznik, które są później wykorzystywane do kolorowania składni. 
+Strona jest do obejrzenia [tutaj](https://tomaszdanczak.github.io/webpack-homepage-test/) 🚀.   
+ 👉 Strona jest krótkim info o mnie.   
+ 👉 Umieściłem na niej część z moich notatek z kursu [WTF Co Ten Frontend](https://cotenfrontend.pl).   
+ 👉 Wszystkie moje notatki znajdują się w tym pliku readme.md  
+ 👉 Napisałem w JS konwerter dodający znaczniki, które są później wykorzystywane do kolorowania składni (konwerter jeszcze niedokończony).   
 
 ![cover](https://cotenfrontend.pl/img/cover.png)
 
@@ -71,7 +71,7 @@ Przykład użycia klas:
 - w DevToolsach w zakładce Network możemy sprawdzić jak pliki są ładowane
 - nowe feautery - nowe funkcje / nowe cechy
 - '<script src="main.js"><script/> - umieszczamy przed tagiem zamykającym `<body/>`
-- 'console.log(`Nazywam się ${name} i mam ${age} lat`); - template stringi mogą być łamene - łamania sią odzwierciedlane w konsoli
+- 'console.log(`Nazywam się ${name} i mam ${age} lat`); - template stringi mogą być łamane - łamania są odzwierciedlane w konsoli
 - w tagu to samo słowo może być nazwą klasy i id: `<section class="features" id="features"><section/>`
 
 # Tydzień IV
@@ -114,7 +114,7 @@ Przykład użycia klas:
 - używać `block__element--js` dla elementów z którymi robimy coś w js
 - nie uczyć się na zapas
 - jeżeli przez półgodziny nie umie się czegość zrobić to pytać
-- jeżeli jest problem z projektem, to rozpisać go na jaknajmniejsze kawałkii próbować je rozwiązać (z rozwiązanych kawałków skłądać całe rozwiązanie)
+- jeżeli jest problem z projektem, to rozpisać go na jak najmniejsze części i następnie je próbować rozwiązać (z rozwiązanych części składać całe rozwiązanie)
 - jeżeli nie ma się pomysłu na projekt to znaleźć jakąś organizację pozarządową w mieście i im zrobić oraz rozwijać stronę
 - gitlens - rozszerzenie do VSC
 - `Ctrl + Alt + F` - zamiana tekstu w VSC - używać jeżeli chcemy np. dodać tę samą klasę do wszystkich akapitów
@@ -164,7 +164,7 @@ Przykład użycia klas:
     }
   ```
 ### JavaScript - obiekty
-- Obiekt z właściwościami prostymi, metodami   obiektem zagnieżdżonym
+- Obiekt z właściwościami prostymi, metodami, obiektem zagnieżdżonym
 ```javascript
   const deathStar = {
     diameter: 120000,
@@ -200,7 +200,6 @@ Przykład użycia klas:
   
   console.log(deathStar[myProperty])
 ```
-+ przypadek, kiedy jest konieczne użycie notacji bracket a dot by się nie sprawdziło:
 + odwołanie się do właściwości zagnieżdżonego obiektu (notacja dot)
  ```javascript
   const showMeProperty = (myProperty) => {
@@ -242,7 +241,7 @@ Przykład użycia klas:
 
   <img src="gh/disable cache.PNG" width="50%">
   
-- gdy utknie się z kodem, porozmawiać z kaczuszką :)
+- gdy utknie się z kodem, porozmawiać z kaczuszką ;)
 
   <img src="gh/duck.PNG" width="30%">
 
@@ -396,7 +395,6 @@ switch(myNumber) {
  #### Funkcje przydatne przy definiowaniu siatki
  - `repeat()`
  - `minmax()`
- - `1fr`
  #### Rozmieszczenie elementów w siatce (pierwszy sposób)
   ```css
     .main {
@@ -463,7 +461,6 @@ switch(myNumber) {
         console.log(e.target);
       });
       ```
-### Hamburger menu
 ### Różne
  - Domyślne style elementów są zależne od systemowych (ikonki są upodobnione do systemowych)
  - Można domyślnie zaznczyć element formularza, poprzez dodanie atrybutu `checked`. Atrybut może mieć wartość (`checked=checked`), ale nie musi
@@ -536,10 +533,7 @@ switch(myNumber) {
 ### Różne
 - plik `.gitignore` zawiera nazwy ignorowanych plików i katalogów (np. node_modules)
    
- ```html
-    <main>main</main>
-    <main class="main">main</main>
-```
+
 
 # Tydzień VIII
 
@@ -594,7 +588,7 @@ Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy i
 
 #### Workflow
 - Tworzymy Repozytorium na GitHubie: [StarterKit](https://github.com/maciejkorsan/wtf-webpack-starter/generate)
-- Klunujemy repozytorium na dysk (uruchamiamy komemndę klonowania będąc w katalogu dev) (git clone adres_do_repozytorium)
+- Klunujemy repozytorium na dysk (uruchamiamy komendę klonowania będąc w katalogu dev) (git clone adres_do_repozytorium)
 - Wchodzimy do katalogu z repozytorium (cd nazwa_repozytorium)
 - Instalujemy zależności (npm install)
 - Kroki wykonywane też przy każdym kolejnym uruchomieniu 
@@ -609,7 +603,7 @@ Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy i
   
 	- assets
 	- js
-	- pages (w którym znajduje się index.html). W pliku index.html nie ma znacznika link do stylów oraz script do stylów. Ścieżki podajemy względem plików źródłowych a nie serwerowych.
+	- pages (w którym znajduje się index.html). W pliku index.html nie ma znacznika link do stylów oraz script do skryptów. Ścieżki podajemy względem plików źródłowych a nie serwerowych.
 	- scss
 - W pliku package.json mamy skonfigurowane trzy skrypty:
 	- start (uruchamia serwer w trybie developerskim)
@@ -881,7 +875,7 @@ console.log(myString.length);
 
 #### FOR
 
-Warunkien najczęściej jest wyrażenie ze znakiem mniejszości (mniejsze od jakiejś długości)
+Warunkiem najczęściej jest wyrażenie ze znakiem mniejszości (mniejsze od jakiejś długości)
 
 ```javascript
 for(let i = 0; i < 3; i++) {
@@ -1106,9 +1100,9 @@ localStorage.setItem('entry', entryInput.value)
 
 Tworzenie stron (kilka rad odnośnie dostępności)
 - Pisz semantycznie
-- Trzymamy kontrast
-- Dobrze dobieramy kolory
-- Unikamy autoplay
+- Trzymaj kontrast
+- Dobrze dobieraj kolory
+- Unikaj autoplay
 - Nie ograniczaj rzeczy czasowo
 - Nie usuwaj :focus
 - Używaj alt (i kończ opisy kropką!)
@@ -1117,10 +1111,6 @@ Tworzenie stron (kilka rad odnośnie dostępności)
 Należy dołożyć dwa pliki
 - manifest.json
 
-### Hydrapp
-#### Hydrapp - workflow
-1. sds
-2. fdfd
 
 # Tydzień XI
 ### JS: destrukturyzacja i spread operator
@@ -1357,7 +1347,7 @@ stopButton.addEventListener("click", e=>{
 - [CC Search](https://ccsearch.creativecommons.org/)
 
 ### Różne
-- user.github.io (można utworzyć repozytorium o takiej nazwie, będzie dostępne pod takim samym linkiem ja nazwa)
+- user.github.io (można utworzyć repozytorium o takiej nazwie, będzie dostępne pod takim samym linkiem jak nazwa)
 - uzupełnić sekcję About każdeg repozytorium uzupełnić adresy do repozytoriów)
 uzupełnić 
 - mail:

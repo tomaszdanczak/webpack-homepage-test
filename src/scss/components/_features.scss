@@ -1,56 +1,55 @@
 .features {
-    padding: 50px 0 30px;
-    margin-bottom: 100vh;
-    max-width: 1200px;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 17rem;
-    grid-gap: 5rem;
+  padding: 50px 0 30px;
+  margin-bottom: 100vh;
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 17rem;
+  grid-gap: 5rem;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px repeat(2, 1fr);
+  grid-template-areas:
+    "head1 head1 head2"
+    "card1 card2 person"
+    "card3 card4 card5";
+
+  @media screen and (max-width: $tab-land) {
+    grid-template-columns: repeat(2, 1fr);
+
     grid-template-areas:
-        "head1 head2 head2"
-        "card1 card2 person"
-        "card3 card4 card5";
+      "head2 head1"
+      "person card1"
+      "card2 card3"
+      "card4 .";
+  }
 
-    @media screen and (max-width: $tab-land){
-        grid-template-columns: repeat(2, 1fr);
-        
-        grid-template-areas:
-            "head2 head1"
-            "person card1"
-            "card2 card3"
-            "card4 .";
+  @media screen and (max-width: $tab-port) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr auto repeat(2, 1fr);
+
+    grid-template-areas:
+      "head2"
+      "person"
+      "head1"
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+
+    &--one {
+      grid-area: head1;
     }
 
-    @media screen and (max-width: $tab-port){
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 1fr auto repeat(2, 1fr);
-        
-        grid-template-areas:
-            "head2"
-            "person"
-            "head1"
-            "card1"
-            "card2"
-            "card3"
-            "card4"
-            ;
+    &--two {
+      grid-area: head2;
     }
-
-    &__header {
-        display: flex;
-        justify-content: center;
-        font-size: 4rem;
-
-        &--one {
-            grid-area: head1;
-        }
-
-        &--two {
-            grid-area: head2;
-        }
-    }
+  }
 }

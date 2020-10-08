@@ -1,4 +1,4 @@
-Strona jest do obejrzenia [tutaj](https://tomaszdanczak.github.io/webpack-homepage-test/) 🚀.   
+Strona jest do obejrzenia [tutaj](https://tomaszdanczak.github.io/webpack-homepage/) 🚀.   
  👉 Strona jest krótkim info o mnie.   
  👉 Umieściłem na niej część z moich notatek z kursu [WTF Co Ten Frontend](https://cotenfrontend.pl).   
  👉 Wszystkie moje notatki znajdują się w tym pliku readme.md  

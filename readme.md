@@ -34,7 +34,7 @@ Trello jest prostym narzędziem do organizacji pracy opartym na zasadach Kanban.
 - należy dobrze opisywać "definition of done" (DOD)
 - zalecane jest używanie trzech zakładek
 ### Tagi HTML
-Poza tagiem `<main>` powinno znajdować się wszystko co się powtarza na stronie np. tagi `<header>` i `<footer>`. Roboty czytają tylko to o jest w tagu `<main>`.
+Poza tagiem `<main>` powinno znajdować się wszystko co się powtarza na stronie np. tagi `<header>` i `<footer>`. Roboty czytają tylko to co jest w tagu `<main>`.
   
 Tag `<article>` może zawierać tagi `<header>` oraz `<footer>`.
 
@@ -113,7 +113,7 @@ Przykład użycia klas:
 ### Różne
 - używać `block__element--js` dla elementów z którymi robimy coś w js
 - nie uczyć się na zapas
-- jeżeli przez półgodziny nie umie się czegość zrobić to pytać
+- jeżeli przez pół godziny nie umie się czegość zrobić to pytać
 - jeżeli jest problem z projektem, to rozpisać go na jak najmniejsze części i następnie je próbować rozwiązać (z rozwiązanych części składać całe rozwiązanie)
 - jeżeli nie ma się pomysłu na projekt to znaleźć jakąś organizację pozarządową w mieście i im zrobić oraz rozwijać stronę
 - gitlens - rozszerzenie do VSC
@@ -200,7 +200,7 @@ Przykład użycia klas:
   
   console.log(deathStar[myProperty])
 ```
-+ odwołanie się do właściwości zagnieżdżonego obiektu (notacja dot)
++ odwołanie się do właściwości zagnieżdżonego obiektu (notacja bracket)
  ```javascript
   const showMeProperty = (myProperty) => {
     console.log(deathStar[myProperty]);
@@ -212,7 +212,7 @@ Przykład użycia klas:
 ### Stylowanie
 - Tabelą dobrze jest nadać szerokość 100% (domyślnie się nie rozszerzają)
 ### Różne
-- przy goooglowaniu rzeczy najlepiej zaznaczyć zakres do roku wstecz (we frontendzie wiedza szybko się dezaktualizuje)
+- przy googlowaniu rzeczy najlepiej zaznaczyć zakres do roku wstecz (we frontendzie wiedza szybko się dezaktualizuje)
 - używać normalize.css oraz
 ```css
   *,
@@ -318,12 +318,11 @@ switch(myNumber) {
     ```
     ```css
       .form {
-
-      }
-
-      &__input {
-        display: block;
-        width: 100%;
+      
+	&__input {
+          display: block;
+          width: 100%;
+        }
       }
     ```
 - #### Formularze: fieldset, radio, checkbox
@@ -388,7 +387,7 @@ switch(myNumber) {
       
  ### CSS Grid
  
- #### Definiowanie siatki (właściwośi rodzica)
+ #### Definiowanie siatki (właściwości rodzica)
  - `grid-template-columns` - definiuje ilość i rozmiar kolumn
  - `grid-template-rows` - definiuje ilość i rozmiar wierszy
  - `grid-gap` - definiuje odstępy
@@ -445,7 +444,7 @@ switch(myNumber) {
     ```html
       <button class="action--js">Zmień nagłówek</button>
     ```
-  - Pobranie referencji do elementu, wywołane funkcji po zdarzeniu click
+  - Pobranie referencji do elementu, wywołanie funkcji po zdarzeniu click
     ```javascript
       const myClick = () => {
         console.log('kliknąłeś');
@@ -463,7 +462,7 @@ switch(myNumber) {
       ```
 ### Różne
  - Domyślne style elementów są zależne od systemowych (ikonki są upodobnione do systemowych)
- - Można domyślnie zaznczyć element formularza, poprzez dodanie atrybutu `checked`. Atrybut może mieć wartość (`checked=checked`), ale nie musi
+ - Można domyślnie zaznaczyć element formularza poprzez dodanie atrybutu `checked`. Atrybut może mieć wartość (`checked=checked`), ale nie musi
  - `display: block` na label spowoduje, że labele będą nad elementami, które opisują
  - Atrybut `required` nakazuje przeglądarce przeprowadzenie walidacji formularza
  - CSS Grid najlepiej się sprawdza do budowania całych layoutów
@@ -516,8 +515,14 @@ switch(myNumber) {
     ```console
     npx node-sass -w main.scss main.css
     ```
-1. Dodanie skryptu
-
+1. Dodanie skryptu	
+    ```console
+    "scripts": {
+      "sass": "npx node-sass -w main.scss main.css",
+      "test": "echo\"Error: no test specified\" && exit1"
+      },
+    }
+    ```
 1. Wywołanie skryptu
     ```console
     npm run sass
@@ -525,7 +530,7 @@ switch(myNumber) {
 1. Zmodyfikowanie skryptu (organizacja plików scss i css w katalogach)
     ```console
     "scripts": {
-      "sass": "npx node-sass -w scss/msin.scss main.css",
+      "sass": "npx node-sass -w scss/main.scss main.css",
       "test": "echo\"Error: no test specified\" && exit1"
       },
     }
@@ -617,7 +622,7 @@ Export domyślny pozwala na dowolne nazywanie rzeczy które importujemy. Nazwy i
 
   <img src="gh/8/webpack-new-file.PNG" width="40%">
   
-- Dodanie wpisu do pliku webpack.common.js. Tworzenie nowej instancji wtryczki do HTML. Po dodaniu wpisu trzeba zrestartować serwer. 
+- Dodanie wpisu do pliku webpack.common.js. Tworzenie nowej instancji wtyczki do HTML. Po dodaniu wpisu trzeba zrestartować serwer. 
 
 	<img src="gh/8/webpack-common-js.PNG" width="100%">
 
@@ -743,7 +748,7 @@ timePlaceholder.innerHTML = moment().startOf('day').fromNow();
 	})
 	```
 ### Google fonts
-- należy wybrać Latin Extended i wpisać zażółć gęślą jaźń żeby łatwo było można odfiltrować tylko te fonty które posiadają wszystkie polskie diakrytyczne znaki
+- należy wybrać Latin Extended i wpisać zażółć gęślą jaźń, żeby łatwo było można odfiltrować tylko te fonty, które posiadają wszystkie polskie znaki diakrytyczne 
 
 - czcionkę dołączamy do projektu za pomocą import albo link:
 
@@ -801,7 +806,7 @@ timePlaceholder.innerHTML = moment().startOf('day').fromNow();
 	```console
 	![Alt obrazka](gh/nazwa_obrazka.png)
 	```
-Kwafratowe przed okrągłymi. K przed O. KO
+Kwadratowe przed okrągłymi. K przed O. KO
 - `Wyróżnienie fragmentu tekstu`
 	```console
 	`tekst`
@@ -875,11 +880,11 @@ console.log(myString.length);
 
 #### FOR
 
-Warunkiem najczęściej jest wyrażenie ze znakiem mniejszości (mniejsze od jakiejś długości)
+Warunkiem najczęściej jest wyrażenie ze znakiem mniejszości (mniejsze od jakiejś wartości)
 
 ```javascript
 for(let i = 0; i < 3; i++) {
-  console.log('i` +  `wykoananie pętli');
+  console.log('i` +  `wykonanie pętli');
 }
 ```
 
@@ -943,8 +948,7 @@ for(let element of myArray) {
 
 ### JS: Przechowywanie danych
 
-Wartości Cookies, Local Storage i Session Storage możemy podejrzeć w zakładce Applicatin (devtools -> Application):
-(screen)
+Wartości Cookies, Local Storage i Session Storage możemy podejrzeć w zakładce Application (devtools -> Application):
 
 #### Cookie (są już przestarzałe)
 
@@ -958,11 +962,11 @@ Wartości Cookies, Local Storage i Session Storage możemy podejrzeć w zakładc
 	```
 #### Local Storage (żyje do ręcznego wyczyszczenia)
 
-- ustawienei wartości
+- ustawienie wartości
 	```javascript
 	localStorage.setItem('human', 'tomek');
 	```
-- pogranie wartości
+- pobranie wartości
 	```javascript
 	console.log(localStorage.getItem('human'));
 	```
@@ -986,7 +990,7 @@ Wartości Cookies, Local Storage i Session Storage możemy podejrzeć w zakładc
 	```
 #### Session Storage (żyje do zamknięcia zakładki przeglądarki)
 
-Session Storage używamy tak samo jak Local Storege. W wywoładniu używamy sessionStorage.
+Session Storage używamy tak samo jak Local Storege. W wywołaniu używamy sessionStorage.
 
 #### Podstawowy Flow aplikacji korzystającej z Local Storage
 HTML
@@ -1030,7 +1034,7 @@ localStorage.setItem('entry', entryInput.value)
     </svg>
     ```
   #### Dodawanie stylowanie dzięki dodaniu klasy
-  Dzięki dodaniu grafiki svg znacznikiem svg można dodać klasę do elementów i stylować jak inne elementy html 
+  Dzięki dodaniu grafiki znacznikiem svg można dodać klasę do elementów i stylować jak inne elementy html 
   ```html
     <svg width="100" height="100">
       <circle class="element" cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
@@ -1090,7 +1094,7 @@ localStorage.setItem('entry', entryInput.value)
    <meta property="og:image" content="" />
 ```
 #### Różne
-- plik favicon.ico umieszczamy w głównym katalogu. Nie trzeba definiować w kodzie odwołania do niego..
+- plik favicon.ico umieszczamy w głównym katalogu. Nie trzeba definiować w kodzie odwołania do niego.
 - przydatna strona do tworzenia grafik: [www.canva.com](www.canva.com)
 - sprawdzanie opisów OG: [www.debug.iframely.com](www.debug.iframely.com)
 ### WAI, WCAG, A11y, ARIA
@@ -1327,7 +1331,7 @@ stopButton.addEventListener("click", e=>{
 - (>) selektor bezpośredniego dziecka
 - [attr=value] selektor atrybutu
 	+ [href] - wybiera wszystkie elementy z atrybutem href
-	+ [href="site.html"] - wyszukuje dokłądnej wartości
+	+ [href="site.html"] - wyszukuje dokładnej wartości
 	+ Linki zawierające coś
 		+ [href*="https"] - wyszukuje fragmen tekstu (wartość musi się gdzieś znaleźć)
 		+ [href^="https"] - dopasowuje wartość atrybutu rozpoczynającą się od https
@@ -1348,8 +1352,7 @@ stopButton.addEventListener("click", e=>{
 
 ### Różne
 - user.github.io (można utworzyć repozytorium o takiej nazwie, będzie dostępne pod takim samym linkiem jak nazwa)
-- uzupełnić sekcję About każdeg repozytorium uzupełnić adresy do repozytoriów)
-uzupełnić 
+- uzupełnić sekcję About każdeg repozytorium (dodać adresy do wersji produkcyjnych)
 - mail:
   ```html
 	<a href="mailto:tomaszdanczak@gmail.com">napisz do mnie</a>
